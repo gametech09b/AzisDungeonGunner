@@ -25,9 +25,14 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     private void Start()
     {
+        gameState = GameState.gameStarted;
+    }
+
+    private void Update()
+    {
         HandleGameState();
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             gameState = GameState.gameStarted;
         }
@@ -42,7 +47,6 @@ public class GameManager : SingletonMonobehaviour<GameManager>
                 PlayDungeonLevel(currentDungeonLevelListIndex);
                 gameState = GameState.playingLevel;
                 break;
-
         }
     }
 
