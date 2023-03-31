@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8515324607152749075}
   - component: {fileID: 7989977995305550623}
   - component: {fileID: 9172245040637811292}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap4_Front
   m_TagString: frontTilemap
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5013941487310534839}
   - component: {fileID: 7562664364349952467}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 1478033642074161334}
   - component: {fileID: 145448345982339060}
   - component: {fileID: 1135924675995861447}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Tilemap6_Minimap
   m_TagString: minimapTilemap
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 3162902115096246189}
   - component: {fileID: 6391716935213691721}
   - component: {fileID: 1747143960889315161}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap2_Decoration1
   m_TagString: decoration1Tilemap
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 6836500855656681932}
   - component: {fileID: 1410222899320717052}
   - component: {fileID: 546148208981091240}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap3_Decoration2
   m_TagString: decoration2Tilemap
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6050399687246397045}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 8528904740595817917}
   - component: {fileID: 1500653477730832149}
   - component: {fileID: 1141729555277065864}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap1_Ground
   m_TagString: groundTilemap
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 133232079297133293}
   - component: {fileID: 3608177751894478492}
   - component: {fileID: -1543674793560376063}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RoomTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 3641396287017377915}
   - component: {fileID: 6265521136751265108}
   - component: {fileID: 7821386082676181985}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Tilemap5_Collision
   m_TagString: collisionTilemap
   m_Icon: {fileID: 0}

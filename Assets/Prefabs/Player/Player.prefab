@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 8308504343780222966}
   - component: {fileID: 489539683308392794}
   - component: {fileID: 1277796174477758927}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,8 +385,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6109434019952188046}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -653709415
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!212 &7957076127515129785
 SpriteRenderer:
@@ -428,7 +428,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -653709415
   m_SortingLayer: 4
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -892881270494569320, guid: 788b52df224c1d14594c1176892c7ab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

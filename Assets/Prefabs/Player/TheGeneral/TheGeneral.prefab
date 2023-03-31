@@ -35,6 +35,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheGeneral
       objectReference: {fileID: 0}
+    - target: {fileID: 6109434019952188046, guid: de372e89229be8b4ea725a69f0343adf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109434019952188046, guid: de372e89229be8b4ea725a69f0343adf, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6169064208592196803, guid: de372e89229be8b4ea725a69f0343adf, type: 3}
       propertyPath: m_Size.x
       value: 1.125
