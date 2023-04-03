@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    
+    #region Tooltip
+
+    [Tooltip("MovementDetailSO scriptable object containing movement details such as speed")]
+
+    #endregion Tooltip
+    [SerializeField] private MovementDetailsSO movementDetails;
 
     #region Tooltip
 
@@ -14,11 +21,14 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Transform weaponShootPosition;
 
     private Player player;
+    private float moveSpeed;
 
     private void Awake()
     {
         // Load components
         player = GetComponent<Player>();
+
+        moveSpeed = movementDetails.GetMoveSpeed();
     }
 
     private void Update()
@@ -37,7 +47,29 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     private void MovementInput()
     {
-        player.idleEvent.CallIdleEvent();
+        // Get movement Input
+        float horizontalMovement = Input.GetAxisRaw("Horizontal");
+        float verticalMovement = Input.GetAxisRaw("Vertical");
+
+        // Create a direction vector based on the input
+        Vector2 direction = new Vector2(horizontalMovement, verticalMovement);
+
+        // Adjust distance for diagonal movement (phytagoras approximation)
+        if (horizontalMovement != 0f && verticalMovement != 0f)
+        {
+            direction *= 0.7f;
+        }
+
+        // if there is movement
+        if (direction != Vector2.zero)
+        {
+            // trigger movement event
+            player.movementByVelocityEvent.CallMovementByVelocityEvent(direction, moveSpeed);
+        }
+        else
+        {
+            player.idleEvent.CallIdleEvent();
+        }
     }
 
     /// <summary>
@@ -78,5 +110,15 @@ public class PlayerControl : MonoBehaviour
         player.aimWeaponEvent.CallAimWeaponEvent(playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
 
     }
+
+    #region Validation
+#if UNITY_EDITOR
+
+        private void OnValidate()
+        {
+            HelperUtilities.ValidateCheckNullValue(this, nameof(movementDetails), movementDetails);
+        }
+#endif
+    #endregion
 
 }
