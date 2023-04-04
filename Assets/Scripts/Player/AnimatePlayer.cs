@@ -19,6 +19,9 @@ public class AnimatePlayer : MonoBehaviour
     {
         // Subscribe to movement by velocity event
         player.movementByVelocityEvent.OnMovementByVelocity += MovementByVelocityEvent_OnMovementByVelocity;
+        
+        // Subscribe to movement by velocity event
+        player.movementToPositionEvent.OnMovementToPosition += MovementToPositionEvent_OnMovementToPosition;
 
         // Subscribe to idle event
         player.idleEvent.OnIdle += IdleEvent_OnIdle;
@@ -32,6 +35,9 @@ public class AnimatePlayer : MonoBehaviour
         // Un-Subscribe to movement by velocity event
         player.movementByVelocityEvent.OnMovementByVelocity -= MovementByVelocityEvent_OnMovementByVelocity;
 
+        // Subscribe to movement by velocity event
+        player.movementToPositionEvent.OnMovementToPosition -= MovementToPositionEvent_OnMovementToPosition;
+        
         // Un-Subscribe to idle event
         player.idleEvent.OnIdle += IdleEvent_OnIdle;
         
@@ -44,7 +50,18 @@ public class AnimatePlayer : MonoBehaviour
     /// </summary>
     private void MovementByVelocityEvent_OnMovementByVelocity(MovementByVelocityEvent movementByVelocityEvent, MovementByVelocityEventArgs movementByVelocityEventArgs)
     {
+        InitializeRollAnimationParameters();
         SetMovementAnimationParameters();
+    }
+
+    /// <summary>
+    /// On movement to position event handler
+    /// </summary>
+    private void MovementToPositionEvent_OnMovementToPosition(MovementToPositionEvent movementToPositionEvent, MovementToPositionEventArgs movementToPositionEventArgs)
+    {
+        InitializeAimAnimationParameters();
+        InitializeRollAnimationParameters();
+        SetMovementToPositionAnimationParameters(movementToPositionEventArgs);
     }
 
     /// <summary>
@@ -52,8 +69,8 @@ public class AnimatePlayer : MonoBehaviour
     /// </summary>
     private void IdleEvent_OnIdle(IdleEvent idleEvent)
     {
+        InitializeRollAnimationParameters();
         SetIdleAnimationParameters();
-
     }
 
     /// <summary>
@@ -62,14 +79,13 @@ public class AnimatePlayer : MonoBehaviour
     private void AimWeaponEvent_OnWeaponAim(AimWeaponEvent aimWeaponEvent, AimWeaponEventArgs aimWeaponEventArgs)
     {
         InitializeAimAnimationParameters();
-
+        InitializeRollAnimationParameters();
         SetAimWeaponAnimationParameters(aimWeaponEventArgs.aimDirection);
     }
 
     /// <summary>
     /// Initialise aim animation parameters
     /// </summary>
-
     private void InitializeAimAnimationParameters()
     {
         player.animator.SetBool(Settings.aimUp, false);
@@ -81,12 +97,50 @@ public class AnimatePlayer : MonoBehaviour
     }
 
     /// <summary>
+    /// Initialize roll animation parameters
+    /// </summary>
+    private void InitializeRollAnimationParameters()
+    {
+        player.animator.SetBool(Settings.rollDown, false);
+        player.animator.SetBool(Settings.rollRight, false);
+        player.animator.SetBool(Settings.rollLeft, false);
+        player.animator.SetBool(Settings.rollUp, false);
+    }
+
+    /// <summary>
     /// Set movement animation parameters
     /// </summary>
     private void SetMovementAnimationParameters()
     {
         player.animator.SetBool(Settings.isMoving, true);
         player.animator.SetBool(Settings.isIdle, false);
+    }
+
+    /// <summary>
+    /// Set movement to position animation parameters
+    /// </summary>
+    private void SetMovementToPositionAnimationParameters(MovementToPositionEventArgs movementToPositionEventArgs)
+    {
+        // Animate roll
+        if (movementToPositionEventArgs.isRolling)
+        {
+            if (movementToPositionEventArgs.moveDirection.x > 0f)
+            {
+                player.animator.SetBool(Settings.rollRight, true);
+            }
+            else if (movementToPositionEventArgs.moveDirection.x < 0f)
+            {
+                player.animator.SetBool(Settings.rollLeft, true);
+            }
+            else if (movementToPositionEventArgs.moveDirection.y > 0f)
+            {
+                player.animator.SetBool(Settings.rollUp, true);
+            }
+            else if (movementToPositionEventArgs.moveDirection.y < 0f)
+            {
+                player.animator.SetBool(Settings.rollDown, true);
+            }
+        }
     }
 
     /// <summary>
