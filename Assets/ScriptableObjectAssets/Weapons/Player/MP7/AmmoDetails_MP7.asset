@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15a53ffdb8e3580499ac5f862765231c, type: 3}
-  m_Name: AmmoDetails_GM6LynxSniper
+  m_Name: AmmoDetails_MP7
   m_EditorClassIdentifier: 
-  ammoName: GM6 Lynx Sniper Ammo
+  ammoName: MP7 Ammo
   isPlayerAmmo: 1
-  ammoSprite: {fileID: 21300000, guid: c3be09077243891458bdbf46a57d2e8a, type: 3}
+  ammoSprite: {fileID: 21300000, guid: e36e8bbd18074d341b170885ac002038, type: 3}
   ammoPrefabArray:
-  - {fileID: 3680396750368968773, guid: 2f35a0bcc9a6c474daf78233f1556677, type: 3}
+  - {fileID: 3680396750368968773, guid: b2084df339b3493498cc44fe71d7ef2f, type: 3}
   ammoMaterial: {fileID: 2100000, guid: 33a55999e44f4724191171c59fc64319, type: 2}
   ammoChargeTime: 0
   ammoChargeMaterial: {fileID: 0}
-  ammoDamage: 13
-  ammoSpeedMin: 25
-  ammoSpeedMax: 25
-  ammoRange: 20
+  ammoDamage: 11
+  ammoSpeedMin: 18
+  ammoSpeedMax: 18
+  ammoRange: 11
   ammoRotationSpeed: 1
-  ammoSpreadMin: 0
-  ammoSpreadMax: 0.5
+  ammoSpreadMin: 2
+  ammoSpreadMax: 4
   ammoSpawnAmountMin: 1
   ammoSpawnAmountMax: 1
   ammoSpawnIntervalMin: 0

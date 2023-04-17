@@ -714,7 +714,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolArray:
   - poolSize: 30
+    prefab: {fileID: 3680396750368968773, guid: b2084df339b3493498cc44fe71d7ef2f, type: 3}
+    componentType: IFireable
+  - poolSize: 30
     prefab: {fileID: 3680396750368968773, guid: 283dca9599c6f7d4991d7a92e82f65a1, type: 3}
+    componentType: IFireable
+  - poolSize: 30
+    prefab: {fileID: 3680396750368968773, guid: 2f35a0bcc9a6c474daf78233f1556677, type: 3}
     componentType: IFireable
 --- !u!4 &374071890
 Transform:
