@@ -250,7 +250,13 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             // Call the reload weapon event
-            player.reloadWeaponEvent.CallReloadWeaponEvent(player.activeWeapon.GetCurrentWeapon(), 0);
+            player.reloadWeaponEvent.CallReloadWeaponEvent(currentWeapon, 0);
+        }
+
+        if (Input.GetMouseButtonDown(0) && currentWeapon.weaponClipRemainingAmmo == 0)
+        {
+            // Call the reload weapon event
+            player.reloadWeaponEvent.CallReloadWeaponEvent(currentWeapon, 0);
         }
 
     }
